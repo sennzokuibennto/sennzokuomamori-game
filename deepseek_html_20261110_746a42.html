@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>周年武運祈願所</title>
+<style>
+:root{--ink:#63321f;}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:"Noto Serif JP","Yu Mincho",serif;color:var(--ink);background:radial-gradient(ellipse at 14% 8%,#fffef2 2%,transparent 55%),radial-gradient(ellipse at 90% 70%,#f0cf91 2%,transparent 48%),linear-gradient(145deg,#fdf2d9,#fff8e9 38%,#f6e1b9);min-height:100vh}
+.shell{width:min(580px,calc(100% - 18px));margin:18px auto 26px;padding:30px 15px 25px;border:1px solid #d3aa6f;border-radius:10px;box-shadow:0 12px 45px #7a42151a,inset 0 0 0 5px #fff5dc,inset 0 0 0 7px #d7b67e;background:linear-gradient(115deg,#fff9e8db,#fdf0d5ea);position:relative;overflow:hidden}
+.shell:before,.shell:after{content:"❧";position:absolute;font-size:110px;color:#c58b4b20;z-index:0}.shell:before{left:-5px;top:-28px;transform:rotate(28deg)}.shell:after{right:-4px;bottom:12px;transform:rotate(210deg)}
+main>*{position:relative;z-index:1}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.4em;color:#9f6c36;text-align:center;margin:0 0 8px}
+.ornate{text-align:center;display:flex;align-items:center;justify-content:center;gap:16px}.ornate:before,.ornate:after{content:"◆ ──";font-size:12px;letter-spacing:.18em;color:#b78a4e}.ornate:after{content:"── ◆"}
+h1{font-size:clamp(27px,4.2vw,50px);margin:0;color:#702419;letter-spacing:.12em;font-weight:900;text-shadow:1px 2px #f9dfb1}h1 em{color:#b13e26;font-style:normal}
+.subhead{text-align:center;margin:14px 0 0;font-size:15px;letter-spacing:.07em;color:#73563c}.rule{height:1px;margin:23px auto 17px;max-width:86%;background:linear-gradient(90deg,transparent,#c9a16a,transparent)}
+.deck{display:flex;flex-direction:row;justify-content:center;align-items:flex-end;gap:6px;margin:15px auto 20px;width:100%}
+.pick-card{padding:0;border:0;background:none;cursor:pointer;border-radius:12px;transition:transform .24s ease;position:relative;flex:1;max-width:100px;outline:none}
+.pick-card img{width:100%;height:auto;display:block;border-radius:8px;box-shadow:0 4px 10px rgba(145,106,61,0.2);mix-blend-mode:multiply;filter:drop-shadow(0 4px 6px #916a3d32)}
+.pick-card:hover{transform:translateY(-8px);filter:brightness(1.03)}
+.stage{text-align:center;max-width:100%;margin:15px auto}.intro{font-size:13px;line-height:1.8;margin:10px auto 15px;color:#8c6037}
+.primary{font-family:inherit;font-weight:900;letter-spacing:.2em;font-size:18px;color:#fff5d7;background:linear-gradient(#a33e24,#7b2119 50%,#6b1e19);border:2px solid #b5803f;outline:1px solid #fbdf9a;outline-offset:-6px;box-shadow:0 4px 0 #5e241a,0 12px 18px #683f2b22;width:100%;padding:15px 10px;border-radius:11px;cursor:pointer;transition:transform .16s}.primary:hover{filter:brightness(1.1)}.primary:active{transform:translateY(3px);box-shadow:0 1px 0 #5e241a}.primary:disabled{opacity:.65}
+.result{border:2px solid #ddbe8f;outline:1px solid #eed4aa;outline-offset:-7px;border-radius:9px;background:linear-gradient(105deg,#fff9eacc,#fdf1d5);margin:20px auto 6px;padding:15px 15px;text-align:center;min-height:110px;box-shadow:0 6px 16px #95673b15}
+.result .small{color:#ab783d;letter-spacing:.17em;font-size:13px}.result h2{margin:6px 0;font-size:22px;color:#7d281e}.result p{line-height:1.65;font-size:14px;margin:7px 0}.special-name{background:linear-gradient(90deg,#a4530b,#ddab2e,#a4530b);color:transparent;background-clip:text}
+.toolbar{display:flex;justify-content:center;margin-top:14px}.secondary{background:transparent;color:#78472b;border:1px solid #ba955e;border-radius:6px;padding:9px 20px;font-family:inherit;cursor:pointer}.secondary:hover{background:#f5e0b8}
+.legal{text-align:center;color:#92775d;font-size:12px;line-height:1.7;margin:16px auto 0;padding:0 10px;font-weight:bold}
+.modal{position:fixed;inset:0;z-index:100;background:#35180fbd;display:none;align-items:center;justify-content:center;padding:14px;overflow-y:auto;backdrop-filter:blur(5px)}.modal.active{display:flex}.modal-panel{position:relative;background:linear-gradient(#fff7e3,#f5deb1);border:2px solid #d3a65c;box-shadow:0 20px 75px #160b0877;outline:5px solid #fff5d7;border-radius:12px;width:min(400px,100%);max-height:calc(100vh - 24px);overflow:auto;padding:21px 19px;text-align:center;animation:pop .35s ease both}.modal-panel.gold{box-shadow:0 0 45px #f0cc64a0,0 20px 75px #160b0877}
+@keyframes pop{from{transform:translateY(20px) scale(.94);opacity:0}to{transform:translateY(0) scale(1);opacity:1}}.close{position:absolute;right:10px;top:7px;border:0;background:transparent;color:#7f4225;font-size:26px;line-height:1;cursor:pointer}.modal-label{font-size:13px;letter-spacing:.15em;color:#af7d3f;font-weight:bold}.modal-panel h2{font-size:28px;margin:5px 0 4px;color:#872b1e}.modal-art{height:min(45vh,320px);display:block;max-width:100%;object-fit:contain;margin:2px auto;mix-blend-mode:multiply}.modal-panel .blessing{line-height:1.8;font-size:15px;margin:10px 0 14px;white-space:pre-line}.modal-actions{display:flex;gap:9px;justify-content:center;flex-wrap:wrap;align-items:center}.modal-actions .primary{min-width:0;font-size:15px;letter-spacing:.05em;padding:11px 18px;border-radius:8px}.modal-actions .secondary{font-size:13px;text-decoration:none;display:inline-block}
+.shuffling .pick-card:nth-child(odd){animation:shiver .15s ease-in-out 4 alternate}.shuffling .pick-card:nth-child(even){animation:shiver .15s ease-in-out 4 reverse alternate}@keyframes shiver{from{transform:translateY(-5px) rotate(-2deg)}to{transform:translateY(3px) rotate(2deg)}}
+</style>
+</head>
+<body>
+<main class="shell" id="app">
+  <p class="eyebrow">一周年・限定専属イベント</p>
+  <div class="ornate"><h1>周年武運<em>祈願所</em></h1></div>
+  <p class="subhead">五つの周年御守、領主様の願いが届きますように</p>
+  <div class="rule"></div>
+  <div class="deck" id="deck"></div>
+  <section class="stage">
+    <div class="intro">いずれかの御守をタップするか、下のボタンをクリックして、領主様だけの周年の祝福を引き当ててください。</div>
+    <button type="button" class="primary" id="drawButton">✦ 御守を引く ✦</button>
+  </section>
+  <section class="result" id="result" aria-live="polite">
+    <div class="small" id="resultLabel">✦ 祈願結果 ✦</div>
+    <h2 id="resultName">祈願はまだです</h2>
+    <p id="resultText">この御守が、領主様の次なる征途に寄り添いますように。</p>
+  </section>
+  <div class="toolbar"><button type="button" class="secondary" id="resetResult">最初からやり直す</button></div>
+  
+  <!-- 此处为你要求替换的文案（已修正） -->
+  <p class="legal">※ 祈願結果をコピーし、専属お問い合わせの窓口に送信して報酬を獲得しましょう！</p>
+  
+</main>
+
+<div class="modal" id="modal">
+  <div class="modal-panel" id="modalPanel">
+    <button class="close" id="closeModal">×</button>
+    <div class="modal-label" id="modalLabel">✦ おめでとうございます ✦</div>
+    <h2 id="modalName">御守</h2>
+    <img class="modal-art" id="modalArt">
+    <p class="blessing" id="modalBlessing"></p>
+    <div class="modal-actions">
+      <!-- 复制按钮 -->
+      <button type="button" class="primary" id="copyBtn" style="background:linear-gradient(#d4af37,#b8860b);border-color:#f9dfb1;color:#fff;box-shadow:0 4px 0 #8b6508;">📋 結果をコピー</button>
+      <button type="button" class="secondary" id="again">もう一度引く</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const cardBackSrc = "./back.png"; 
+
+const omamori = [
+  { "name": "登用御守", "bless": "登用の時に、心に念じる\nすべてに応えがありますように。", "src": "./1.jpg", "weight": 24.5, "special": false },
+  { "name": "鍛造御守", "bless": "巧みに鍛えて器を成し、\nその鍛造のたびに\n得るものがありますように。", "src": "./2.png", "weight": 24.5, "special": false },
+  { "name": "開陣御守", "bless": "新たな旅路の出発が\n順調でありますように。\n行く先々で先機を\n得られますように。", "src": "./3.png", "weight": 24.5, "special": false },
+  { "name": "勝運御守", "bless": "陣に臨んで乱れず、\n肝心の戦いには勝機が\nありますように。", "src": "./4.png", "weight": 24.5, "special": false },
+  { "name": "金色真戦御守", "bless": "伝うところによれば、心に期待を抱くだけですが、\nこの金色の光を見ることができるという。\n領主様の次の征途において、\n求めるものすべてを得、\n行く先々に悔いを残しませんように。", "src": "./5.png", "weight": 2, "special": true }
+];
+
+const $ = id => document.getElementById(id);
+let locked = false;
+let currentResult = null; 
+
+function setup() {
+  omamori.forEach((c,i)=>{
+    const btn = document.createElement('button');
+    btn.type = 'button'; btn.className = 'pick-card';
+    const img = document.createElement('img');
+    img.src = cardBackSrc;
+    btn.appendChild(img);
+    btn.addEventListener('click',()=>draw());
+    $('deck').appendChild(btn);
+  });
+}
+
+function weightedChoice(){
+  const r=Math.random()*100; let cum=0;
+  for(let i=0;i<omamori.length;i++){ cum+=omamori[i].weight; if(r<cum)return i; }
+  return 0;
+}
+
+function display(i){
+  const c=omamori[i]; locked=false;
+  currentResult = c; 
+  
+  $('deck').classList.remove('shuffling'); $('drawButton').disabled=false;
+  
+  $('resultLabel').textContent=c.special?'✦ レア金色御守 ✦':'✦ 祈願結果 ✦';
+  $('resultName').textContent=c.name; $('resultName').className=c.special?'special-name':'';
+  $('resultText').textContent=c.bless;
+  
+  $('modalName').textContent=c.name; $('modalName').className=c.special?'special-name':'';
+  $('modalArt').src=c.src; $('modalBlessing').textContent=c.bless;
+  $('modalPanel').classList.toggle('gold',c.special);
+  $('modalLabel').textContent=c.special?'✦ レア金色御守 ✦':'✦ おめでとうございます ✦';
+  
+  $('modal').classList.add('active'); $('closeModal').focus();
+  
+  const allCards = document.querySelectorAll('.pick-card img');
+  allCards.forEach((img, idx) => { img.src = (idx === i) ? c.src : cardBackSrc; });
+}
+
+function draw(){
+  if(locked)return; locked=true; $('drawButton').disabled=true; closeResult();
+  const allCards = document.querySelectorAll('.pick-card img');
+  allCards.forEach(img => { img.src = cardBackSrc; });
+  $('deck').classList.add('shuffling');
+  setTimeout(()=>display(weightedChoice()),560);
+}
+
+function closeResult(){ $('modal').classList.remove('active'); }
+
+$('drawButton').addEventListener('click',()=>draw());
+$('resetResult').addEventListener('click',()=>{
+  closeResult(); $('resultLabel').textContent='✦ 祈願結果 ✦';
+  $('resultName').textContent='祈願はまだです'; $('resultName').className='';
+  $('resultText').textContent='この御守が、領主様の次なる征途に寄り添いますように。';
+  const allCards = document.querySelectorAll('.pick-card img');
+  allCards.forEach(img => { img.src = cardBackSrc; });
+  window.scrollTo({top:0,behavior:'smooth'});
+});
+
+// 复制功能逻辑
+$('copyBtn').addEventListener('click', () => {
+  if (!currentResult) return;
+  
+  const textToCopy = `【周年武運祈願所】\nおめでとうございます！私は「${currentResult.name}」を引き当てました！\n\n祝福の言葉：\n${currentResult.bless}\n\n※この結果を専属窓口に送信して報酬を受け取ります。`;
+  
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(textToCopy).then(() => {
+      alert("コピーしました！お問い合わせ窓口に送信してください。");
+    }).catch(err => {
+      fallbackCopyTextToClipboard(textToCopy);
+    });
+  } else {
+    fallbackCopyTextToClipboard(textToCopy);
+  }
+});
+
+function fallbackCopyTextToClipboard(text) {
+  const textArea = document.createElement("textarea");
+  textArea.value = text;
+  textArea.style.position = "fixed";
+  textArea.style.top = "-9999px";
+  document.body.appendChild(textArea);
+  textArea.focus();
+  textArea.select();
+  try {
+    document.execCommand('copy');
+    alert("コピーしました！お問い合わせ窓口に送信してください。");
+  } catch (err) {
+    alert("コピーに失敗しました。手動で選択してコピーしてください。");
+  }
+  document.body.removeChild(textArea);
+}
+
+$('again').addEventListener('click',()=>draw());
+$('closeModal').addEventListener('click',closeResult);
+$('modal').addEventListener('click',e=>{if(e.target===$('modal'))closeResult();});
+setup();
+</script>
+</body>
+</html>
